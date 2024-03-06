@@ -7,7 +7,6 @@ import Projects from "@/components/projects";
 export default function Home() {
   return (
     <>
-      <Header />
       <div className="w-[50%] overflow-hidden p-4 mx-auto">
         <Landing />
         <Projects />
