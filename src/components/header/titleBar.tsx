@@ -1,4 +1,4 @@
-import NavLink from "./navLink";
+import { NavLink } from "@/lib/link";
 
 const TitleBar = function () {
   return (
