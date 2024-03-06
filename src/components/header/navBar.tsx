@@ -1,5 +1,5 @@
-import { ExtLinks, NavItems } from "./constant";
-import ExtLink from "./extLink";
+import { ExtLinksData, NavItems } from "@/constants";
+import ExtLink from "@/lib/link/extLink";
 import MenuBar from "./menuBar";
 import NavLink from "./navLink";
 
@@ -13,7 +13,7 @@ const Navbar = function () {
           );
         })}
 
-        {ExtLinks.map((item) => {
+        {ExtLinksData.map((item) => {
           return (
             <ExtLink
               key={item.title}

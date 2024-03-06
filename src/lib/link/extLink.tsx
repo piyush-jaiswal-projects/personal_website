@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExtLink } from "./constant";
+import { ExtLink } from "@/types/header";
 
 const ExtLink = function (props: ExtLink) {
   return (
