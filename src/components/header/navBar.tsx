@@ -1,7 +1,6 @@
 import { ExtLinksData, NavItems } from "@/constants";
-import ExtLink from "@/lib/link/extLink";
 import MenuBar from "./menuBar";
-import NavLink from "./navLink";
+import { NavLink, ExtLink } from "@/lib/link";
 
 const Navbar = function () {
   return (
