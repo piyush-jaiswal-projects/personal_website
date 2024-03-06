@@ -1,3 +1,4 @@
+import Articles from "@/components/articles";
 import Experience from "@/components/experience";
 import Header from "@/components/header";
 import Landing from "@/components/landing";
@@ -11,6 +12,7 @@ export default function Home() {
         <Landing />
         <Projects />
         <Experience />
+        <Articles />
       </div>
     </>
   );

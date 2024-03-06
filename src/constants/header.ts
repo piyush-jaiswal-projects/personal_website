@@ -11,7 +11,7 @@ export const NavItems: NavItem[] = [
   },
   {
     title: "Blog",
-    path: "/blog",
+    path: "/articles",
   },
   {
     title: "Experience",

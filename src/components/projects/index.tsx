@@ -10,7 +10,7 @@ const Projects = () => {
       {ProjectList.slice(0, 3).map((project, index) => {
         return <ProjectCard key={`project-${index}`} {...project} />;
       })}
-      <div className="mt-4">
+      <div className="mt-4 text-center">
         <NavLink path="/projects" text="view more" />
       </div>
     </div>
