@@ -4,14 +4,14 @@ import { NavLink } from "@/lib/link";
 import { req, sendHttpRequest } from "@/utils";
 import { ArticleCardProps } from "@/types/article";
 
-const Articles = async () => {
+const Articles = async (props: { minCount: boolean }) => {
   const articlesList = await sendHttpRequest("blogs", req.get);
 
   return (
     <div>
       <SectionTitle title="Recent writings" />
       {articlesList
-        .slice(0, 3)
+        .slice(0, props.minCount === true ? 3 : articlesList.length)
         .map((article: ArticleCardProps, index: number) => {
           return <ArticleCard key={`article-${index}`} {...article} />;
         })}
