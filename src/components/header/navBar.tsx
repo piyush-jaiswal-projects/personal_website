@@ -5,7 +5,7 @@ import { NavLink, ExtLink } from "@/lib/link";
 const Navbar = function () {
   return (
     <>
-      <div className="w-[50%] mx-4 justify-between items-center hidden md:flex">
+      <div className="w-[50%] mx-4 mr-10 justify-between items-center hidden md:flex">
         {NavItems.map((item) => {
           return (
             <NavLink path={item.path} text={item.title} key={item.title} />
