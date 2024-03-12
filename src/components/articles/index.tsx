@@ -10,7 +10,7 @@ const Articles = async (props: { minCount: boolean }) => {
   return (
     <div>
       <SectionTitle title="Recent writings" />
-      {articlesList
+      {articlesList.data
         .slice(0, props.minCount === true ? 3 : articlesList.length)
         .map((article: ArticleCardProps, index: number) => {
           return <ArticleCard key={`article-${index}`} {...article} />;

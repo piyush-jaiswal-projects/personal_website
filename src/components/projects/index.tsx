@@ -10,7 +10,7 @@ const Projects = async (props: { minCount: boolean }) => {
   return (
     <div>
       <SectionTitle title="Projects" />
-      {projectsList
+      {projectsList.data
         .slice(0, props.minCount === true ? 3 : projectsList.length)
         .map((project: ProjectCardProps, index: number) => {
           return <ProjectCard key={`project-${index}`} {...project} />;

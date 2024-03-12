@@ -10,15 +10,14 @@ const sendHttpRequest = async (uri: string, reqType: req, body?: any) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${uri}`, {
       method: reqType,
       headers: {
-        accept: "application.json",
+        accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: body,
+      body: JSON.stringify(body),
     });
 
     const resData = await res.json();
-
-    return resData.data;
+    return resData;
   } catch (error) {
     console.log(error);
     return {

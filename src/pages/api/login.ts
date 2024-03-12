@@ -19,16 +19,20 @@ export default async function handler(
 
       if (!user) {
         res
-          .status(400)
-          .json(new ApiResponse(400, "", "User does not exist!", false));
+          .status(404)
+          .json(new ApiResponse(404, "", "User does not exist!", false));
         return;
       }
 
       if (user.password === body.password) {
         res.status(200).json(new ApiResponse(200, "", "Login success!", true));
+      } else {
+        res
+          .status(401)
+          .json(new ApiResponse(401, "", "Wrong password!", false));
       }
     } else {
-      res.status(404).json(new ApiResponse(404, "", "Invalid request!", false));
+      res.status(400).json(new ApiResponse(400, "", "Invalid request!", false));
     }
   } catch (error) {
     logError(error);

@@ -9,7 +9,7 @@ const Experience = async (props: { minCount: boolean }) => {
   return (
     <div className="my-4">
       <SectionTitle title="Experience" />
-      {experienceList
+      {experienceList.data
         .slice(0, props.minCount === true ? 3 : experienceList.length)
         .map((exp: ExperienceCardProps, index: number) => {
           const expKey = `exp-${index}`;

@@ -13,8 +13,17 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --black-text: 0, 0, 0;
   }
 }
+
+/* @media (prefers-color-scheme: light){
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,6 +33,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.custom-input {
+  color: black;
 }
 
 @layer utilities {

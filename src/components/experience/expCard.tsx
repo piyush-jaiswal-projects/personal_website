@@ -2,9 +2,9 @@ import { ExperienceCardProps } from "@/types/experience";
 
 const ExpCard = (props: ExperienceCardProps) => {
   const currYear = new Date().getFullYear();
-  const endYear = props.endDate.getFullYear();
+  const endYear = new Date(props.endDate).getFullYear();
   const end = endYear === currYear ? "Present" : endYear;
-  const period = `${props.startDate.getFullYear()} - ${end}`;
+  const period = `${new Date(props.startDate).getFullYear()} - ${end}`;
 
   return (
     <div className="flex justify-start items-center p-4 h-[180px] mt-4">
