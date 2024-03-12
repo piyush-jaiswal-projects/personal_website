@@ -19,9 +19,7 @@ export default async function handler(
         .json(
           new ApiResponse(200, articles, "Data fetched successfully!", true),
         );
-    }
-
-    if (req.method === "POST") {
+    } else if (req.method === "POST") {
       const article = await AppDataSource.getRepository(ArticleSchema).create(
         req.body,
       );
@@ -33,9 +31,7 @@ export default async function handler(
       res
         .status(200)
         .json(new ApiResponse(200, result, "Article created!", true));
-    }
-
-    if (req.method === "DELETE") {
+    } else if (req.method === "DELETE") {
       const { id } = req.query;
 
       const article = await AppDataSource.getRepository(ArticleSchema).delete({
@@ -44,9 +40,7 @@ export default async function handler(
       if (article.affected === 0) throw Error("Error deleting article!");
 
       res.status(200).json(new ApiResponse(200, "", "Article deleted!", true));
-    }
-
-    if (req.method === "PUT") {
+    } else if (req.method === "PUT") {
       const { id } = req.query;
       const body = req.body;
 
@@ -57,9 +51,7 @@ export default async function handler(
       if (article.affected === 0) throw Error("Error updating article!");
 
       res.status(200).json(new ApiResponse(200, "", "Article updated!", true));
-    }
-
-    res.status(404).json(new ApiError(404, "Invalid request!"));
+    } else res.status(404).json(new ApiError(404, "Invalid request!"));
   } catch (error) {
     logError(error);
     const errMsg: string = getErrorMessage(error);
