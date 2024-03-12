@@ -7,7 +7,7 @@ export enum req {
 
 const sendHttpRequest = async (uri: string, reqType: req, body?: any) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${uri}`, {
+    const res = await fetch(`${process.env.API_URL}/api/${uri}`, {
       method: reqType,
       headers: {
         accept: "application/json",
