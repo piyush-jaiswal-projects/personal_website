@@ -11,14 +11,10 @@ export default async function handler(
     await connectDb();
 
     if (req.method === "GET") await getRequest(req, res);
-
-    if (req.method === "POST") await postRequest(req, res);
-
-    if (req.method === "DELETE") await deleteRequest(req, res);
-
-    if (req.method === "PUT") await putRequest(req, res);
-
-    res.status(404).json(new ApiError(404, "Invalid request!"));
+    else if (req.method === "POST") await postRequest(req, res);
+    else if (req.method === "DELETE") await deleteRequest(req, res);
+    else if (req.method === "PUT") await putRequest(req, res);
+    else res.status(404).json(new ApiError(404, "Invalid request!"));
   } catch (error) {
     logError(error);
     const errMsg: string = getErrorMessage(error);
