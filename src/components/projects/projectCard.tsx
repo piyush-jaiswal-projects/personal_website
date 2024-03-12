@@ -7,7 +7,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <div className="bg-gray-900 rounded-lg h-[100px] shadow-lg mt-4 p-2 flex justify-start items-center">
       <Link href={props.liveUrl} target="__blank">
         <div className="h-[75px] w-[75px] rounded-lg bg-gray-700">
-          <Image src={props.coverImage} alt="" />
+          <Image src={""} width={300} height={300} alt="" />
         </div>
       </Link>
 

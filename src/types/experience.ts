@@ -1,6 +1,6 @@
 export type ExperienceCardProps = {
-  startDate: Date;
-  endDate: Date;
+  startDate: Date | string;
+  endDate: Date | string;
   company: string;
   profile: string;
   description: string;

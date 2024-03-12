@@ -1,4 +1,5 @@
 import { ArticleSchema, ExperienceSchema, ProjectSchema } from "@/models";
+import AdminSchema from "@/models/admin.entity";
 import { DbConnectionProps } from "@/types";
 import { DataSource } from "typeorm";
 
@@ -11,7 +12,7 @@ export const AppDataSource = new DataSource({
   database: process.env.NEXT_PUBLIC_DB,
   synchronize: true,
   logging: false,
-  entities: [ProjectSchema, ExperienceSchema, ArticleSchema],
+  entities: [ProjectSchema, ExperienceSchema, ArticleSchema, AdminSchema],
 });
 
 export const isDbConnected = () => {
