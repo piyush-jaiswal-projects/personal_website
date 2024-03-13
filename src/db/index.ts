@@ -5,11 +5,11 @@ import { DataSource } from "typeorm";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: process.env.DB_HOST,
+  host: process.env.NEXT_PUBLIC_DB_HOST,
   port: 5432,
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  database: process.env.DB,
+  username: process.env.NEXT_PUBLIC_DB_USERNAME,
+  password: process.env.NEXT_PUBLIC_DB_PASSWORD,
+  database: process.env.NEXT_PUBLIC_DB,
   synchronize: true,
   logging: false,
   entities: [ProjectSchema, ExperienceSchema, ArticleSchema, AdminSchema],
