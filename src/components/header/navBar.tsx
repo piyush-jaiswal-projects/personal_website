@@ -4,8 +4,8 @@ import { NavLink, ExtLink } from "@/lib/link";
 
 const Navbar = function () {
   return (
-    <>
-      <div className="w-[50%] mx-4 mr-10 justify-between items-center hidden md:flex">
+    <div className="w-[50%] h-[100%] p-2 text-right flex justify-end">
+      <div className="justify-between items-center hidden lg:flex">
         {NavItems.map((item) => {
           return (
             <NavLink path={item.path} text={item.title} key={item.title} />
@@ -23,8 +23,10 @@ const Navbar = function () {
           );
         })}
       </div>
-      <MenuBar />
-    </>
+      <div className="w-[50%] lg:hidden overflow-hidden text-center">
+        <MenuBar />
+      </div>
+    </div>
   );
 };
 

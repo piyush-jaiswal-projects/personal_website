@@ -20,7 +20,7 @@ export default async function handler(
     const errMsg: string = getErrorMessage(error);
     res.status(500).json(new ApiError(500, errMsg));
   } finally {
-    disconnectDb();
+    await disconnectDb();
   }
 }
 

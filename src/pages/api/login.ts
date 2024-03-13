@@ -7,8 +7,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  await connectDb();
   try {
+    await connectDb();
     if (req.method === "POST") {
       const body = req.body;
       const user = await AppDataSource.getRepository(AdminSchema).findOne({

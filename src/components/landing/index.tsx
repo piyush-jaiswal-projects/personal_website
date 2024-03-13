@@ -3,7 +3,7 @@ import Intro from "./intro";
 
 const Landing = () => {
   return (
-    <div className="flex justify-around items-center my-10">
+    <div className="lg:flex text-center lg:justify-around items-center my-4 lg:my-10">
       <Dp />
       <Intro />
     </div>
